@@ -2,7 +2,7 @@ import axios, { AxiosError } from "axios";
 
 const axiosInstance = axios.create({
     baseURL: 'https://jsonplaceholder.typicode.com/',
-    timeout: 10000,
+    timeout: 15000,
     headers: {
         "Content-Type": 'application/json'
     }

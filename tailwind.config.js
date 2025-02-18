@@ -2,10 +2,15 @@
 module.exports = {
   content: [
     "./public/index.html",
-
+    "./src/App.tsx",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'background': '#373E45',
+        'text-color': '#fff',
+      }
+    },
   },
   plugins: [],
 }
