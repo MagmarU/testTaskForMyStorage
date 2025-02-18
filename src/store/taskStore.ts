@@ -1,4 +1,4 @@
-import { makeAutoObservable } from "mobx";
+import { makeAutoObservable, toJS } from "mobx";
 import { taskType } from "../utils/interfaces";
 import { getTaskList } from "../http/api";
 
@@ -6,11 +6,17 @@ export default class TaskStore {
     constructor() {
         makeAutoObservable(this);
     }
-    private _tasks: taskType | {} = {};
+    
+    private _tasks: {[key: number]: taskType[]} = {};
 
     public setTasks(tasks: taskType[]) {
-        console.log( tasks );
-        this._tasks = tasks;
+        console.log(tasks);
+        tasks.forEach((item) => {
+            this._tasks[item.userId] = [
+                ...this._tasks[item.userId] || [],
+                item
+            ];
+        });
     }
 
     public get tasks() {
@@ -19,10 +25,10 @@ export default class TaskStore {
 
     public async initTasks() {
         try {
-            const response = await getTaskList();
+            const response = await getTaskList()
             this.setTasks(response);
         } catch (error) {
-            throw new Error('Ошибка получения задач пользователей');
+            throw new Error(`Ошибка получения задач пользователей ${error}`);
         }
     }
 }

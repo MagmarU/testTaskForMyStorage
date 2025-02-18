@@ -3,7 +3,7 @@ import { userType } from "../utils/interfaces";
 import { getUsers } from "../http/api";
 
 export default class UserStore {
-    private _users: userType | {} = {};
+    private _users: userType[] | [] = [];
 
     constructor() {
         makeAutoObservable(this);
@@ -13,7 +13,7 @@ export default class UserStore {
         return this._users;
     }
 
-    private setUsers(users: userType) {
+    private setUsers(users: userType[]) {
         this._users = users;
     }
 

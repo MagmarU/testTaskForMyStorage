@@ -14,7 +14,10 @@ export interface taskType {
 }
 
 export interface userType {
-
+  id: number;
+  name: string;
+  username: string;
+  email: string;
 }
 
 export interface taskTableColumns {

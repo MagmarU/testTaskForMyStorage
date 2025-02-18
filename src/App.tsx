@@ -1,8 +1,7 @@
 import { useContext, useEffect } from "react";
 import { Context } from ".";
 import { observer } from "mobx-react-lite";
-import { toJS } from "mobx";
-import { idText } from "typescript";
+import TasksTable from "./components/TasksTable";
 
 const App: React.FC = observer(() => {
 
@@ -35,6 +34,7 @@ const App: React.FC = observer(() => {
             <span className="text-5xl font-bold leading-[58px]">User To-Do Table</span>
             <span className="font-normal opacity-30 leading-6">User task table for effective planning.</span>
           </div>
+          <TasksTable />
         </div>
       </div>
     </>
