@@ -7,10 +7,10 @@ export interface ContextType {
 }
 
 export interface taskType {
-    id: number;
-    userId: number;
-    title: string;
-    completed: boolean;
+  id: number;
+  userId: number;
+  title: string;
+  completed: boolean;
 }
 
 export interface userType {
@@ -21,6 +21,6 @@ export interface userType {
 }
 
 export interface taskTableColumns {
-    id: number;
-    username: string;
+  id: number;
+  username: string;
 }

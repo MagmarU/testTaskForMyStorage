@@ -33,8 +33,10 @@ const App: React.FC = observer(() => {
   }
 
   return (
-    <div className="w-[1569px]">
-      <MainPage />
+    <div className="w-full min-h-screen flex justify-center px-10 pt-14 sm:pt-[81px] sm:pl-[79px] sm:pr-[80px]">
+      <div className="w-[1569px] flex flex-col gap-4">
+        <MainPage />
+      </div>
     </div>
   );
 });

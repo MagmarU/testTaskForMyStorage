@@ -1,4 +1,4 @@
-import { makeAutoObservable, toJS } from "mobx";
+import { makeAutoObservable } from "mobx";
 import { taskType } from "../utils/interfaces";
 import { getTaskList } from "../http/api";
 

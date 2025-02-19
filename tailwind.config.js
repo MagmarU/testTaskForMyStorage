@@ -6,6 +6,8 @@ module.exports = {
     "./src/App.tsx",
 
     "./src/components/TasksTable.tsx",
+
+    "./src/pages/MainPage.tsx",
   ],
   theme: {
     extend: {
@@ -13,9 +15,12 @@ module.exports = {
         'background': '#373E45',
         'text-color': '#fff',
         'border-color': 'rgb(255,255,255, .1)',
-        'user-icon-background-color': 'rgba(255, 255, 255, 0.04)',
 
-      }
+        'white-color-opacity-10': 'rgb(255,255,255, .1)',
+        'white-color-opacity-30': 'rgb(255,255,255, .3)',
+        'white-color-opacity-40': 'rgb(255,255,255, .4)',
+        'white-color-opacity-4': 'rgba(255, 255, 255, 0.04)',
+      },
     },
   },
   plugins: [],
