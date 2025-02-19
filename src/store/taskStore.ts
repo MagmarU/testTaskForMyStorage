@@ -6,12 +6,11 @@ export default class TaskStore {
     constructor() {
         makeAutoObservable(this);
     }
-    
-    private _tasks: {[key: number]: taskType[]} = {};
 
-    public setTasks(tasks: taskType[]) {
-        console.log(tasks);
-        tasks.forEach((item) => {
+    private _tasks: { [key: number]: taskType[] } = {};
+
+    public setTasks(data: taskType[]) {
+        data.forEach((item) => {
             this._tasks[item.userId] = [
                 ...this._tasks[item.userId] || [],
                 item
@@ -26,7 +25,9 @@ export default class TaskStore {
     public async initTasks() {
         try {
             const response = await getTaskList()
-            this.setTasks(response);
+            if (response) {
+                this.setTasks(response);
+            }
         } catch (error) {
             throw new Error(`Ошибка получения задач пользователей ${error}`);
         }
